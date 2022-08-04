@@ -7,13 +7,11 @@
     max-width: 1300px;
     height: auto;
     margin: auto;
-    border: 2px solid red;
 }
 
 .navbar{
     background-color: gray;
 }
-
 .navbar ul{
     height: 15vh;
     display: flex;
@@ -132,19 +130,23 @@ h4,h3{
     margin-top: 20px;
     background-color: #372c2c;
     width: 100%;
-    height: 430px;
+    height: 300px;
 }
 .sect,.contact{
     display: flex;
 }
-.contact, .form{
-    width: 50%;
+.contact{
+    width: 70%;
     height: 300px;
     display: flex;
     justify-content: space-evenly;
 }
+.c2{
+    width: 40%;
+    margin-top: 10px;
+}
 .c1{
-    width:32%;
+    width:20%;
     margin-top: 10px;
 }
 .p2{
@@ -168,23 +170,11 @@ h4,h3{
 .last{
     display: flex;
 }
-.form{
-    position: relative;
+.for{
+    text-align: left;
 }
-.form1{
-    background-color: #d6d6d6;
-    width: 40%;
-    margin: auto;
-    height: 340px;
-    position: absolute;
-    top: -50px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-.im{
-    width: 40px;
-    height: 40px;
+.fa{
     background-color:#372c2c ;
-    border-radius: 50%;
     margin-left: 10px;
     cursor: pointer;
 }
@@ -193,4 +183,16 @@ input, label{
 }
 input{
     background-color: #f5f0f0;
+}
+.aa{
+    display: flex;
+    margin-bottom: 12px;
+}
+.i{
+    margin-right: 17px;
+}
+.ends{
+    display: flex;
+    justify-content: end;
+    font-size: 15px;
 }
