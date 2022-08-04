@@ -14,8 +14,12 @@ img{
     text-align: center;
     color:rgba(25, 18, 87, 0.911);
 }
+.para{
+    font-size: 35px;
+    font-weight: 600;
+}
 .h2{
-    font-size: 30px;
+    font-size: 40px;
 }
 .para{
     font-size: 16px;
@@ -35,7 +39,7 @@ left:300px;
     color:rgba(25, 18, 87, 0.911);
     text-decoration: none;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     padding: 12px 20px;
@@ -48,7 +52,8 @@ left:300px;
 }
 .middle{
     margin-top: -4px;
-    background-color: wheat;
+    /* background-color: wheat; */
+    background-color: #acacac;
     font-size: 16px;
     padding: 13px;
     font-family: Arial, Helvetica, sans-serif;
@@ -65,7 +70,8 @@ left:300px;
 }
 
 .a1,.a3{
-    background-color: wheat;
+    /* background-color: wheat; */
+    background-color: #acacac;
     font-size: 16px;
     padding: 13px;
     font-family: Arial, Helvetica, sans-serif;
