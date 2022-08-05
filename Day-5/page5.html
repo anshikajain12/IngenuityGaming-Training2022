@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h3 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-shadow: 2px 2px 5px solid red;
+            font-size: 15px;
+            color: rgb(224, 117, 117);
+        }
+        .map{
+            margin-top: 10px;
+            background-image: linear-gradient(red,green,yellow);
+        }
+        .imgbox {
+            width: 500px;
+            height: 500px;
+            border: 2px solid red;
+            margin: auto;
+            background-image: url("https://media.istockphoto.com/photos/office-desktop-with-womans-hands-working-on-laptop-business-with-picture-id1389860986");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 10px 10px 10px grey;
+        }
+
+        .imgbox img {
+            width: 500px;
+            height: 400px;
+        }
+
+        .container {
+            width: 100%;
+            height: 500px;
+            background-image: linear-gradient(red, rgb(52, 52, 138), green, yellow);
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 21vh;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blanchedalmond;
+            margin: auto;
+            box-shadow: 2px 2px 5px red;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            /* transform: scale(1); */
+
+        }
+
+        header {
+            height: 20vh;
+            background-color: gray;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: white;
+            margin: 0 10px;
+            color: black;
+            text-transform: uppercase;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            text-shadow: 5px 5px 5px rgb(131, 113, 113);
+        }
+
+        nav ul li a:hover {
+            background-color: orange;
+            color: white;
+            box-shadow: 10px 10px 10px rgb(192, 138, 138);
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cont">
+        <header>
+
+            <div class="logo"></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Service</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div class="map">
+
+        <div class="imgbox">
+
+            <!-- <img
+                src="https://media.istockphoto.com/photos/office-desktop-with-womans-hands-working-on-laptop-business-with-picture-id1389860986"> -->
+            <h3>Heyyy</h3>
+        </div>
+    </div>
+
+</body>
+
+</html>
