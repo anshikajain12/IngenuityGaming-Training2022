@@ -8,7 +8,20 @@
     height: auto;
     margin: auto;
 }
-
+header{
+    height: 20vh;
+    background-color: gray;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    width: 100%;
+}
+.logo img{
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
 .navbar{
     background-color: gray;
 }
@@ -16,7 +29,6 @@
     height: 15vh;
     display: flex;
     list-style-type: none;
-    justify-content: right;
     align-items: center;
 }
 .li .a{
@@ -32,6 +44,8 @@
     cursor: pointer;
     color:black;
     background-color:whitesmoke;
+    box-shadow: 5px 5px 5px rgb(182, 173, 173);
+    transform: translateY(-10px);
 }
 article img{
     margin-top: 15px;
