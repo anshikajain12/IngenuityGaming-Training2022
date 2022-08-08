@@ -1,17 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Box animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-color: skyblue;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+        }
+        .box{
+            width: 250px;
+            height: 250px;
+            background-color:rgb(224, 93, 163);
+            border: 5px solid white;
+            box-shadow: 10px 10px 10px silver;
+            transition:  transform 1s;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .box1:hover{
+            transform: translate(200px, 300px) rotate(360deg);
+        }
+        .box2:hover{
+            transform: scale(1.5) skew(-40deg, 30deg);
+        }
+        .box3:hover{
+            transform: scale(0.5) translate(-300px, -200px);
+        }
+        .box4:hover{
+            transform: rotate(270deg) skew(40deg,30deg) scale(0.5);
+        }
+        p{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            color: antiquewhite;
+            text-shadow: 10px 10px 10px  rgb(231, 167, 178);
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
-        <div class="box box1"></div>
-        <div class="box box2"></div>
-        <div class="box box3"></div>
-        <div class="box box4"></div>
+        <div class="box box1">
+            <p>translate : 200px and 300px , rotate: 360deg</p>
+        </div>
+        <div class="box box3">
+            <p>scale: 0.5 , translate: -300px and -200px</p>
+        </div>
+        <div class="box box2">
+            <p>scale: 1.5 , skew: -40deg and 30deg</p>
+        </div>
+        <div class="box box4">
+            <p>rotate: 270deg, skew: 40deg and 30deg , scale: 0.5</p>
+        </div>
     </div>
 </body>
+
 </html>
