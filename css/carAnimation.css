@@ -47,7 +47,7 @@
 }
 .car{
     z-index: 2;
-    width: 466px;
+    width: 400px;
     height: 261px;
     position: absolute;
     left: 50%;
@@ -62,7 +62,7 @@
 }
 .wheels{
     position: absolute;
-    left: 48%;
+    left: 50%;
     transform: translateX(-50%);
     bottom: 183px;
     z-index: 2;
@@ -77,12 +77,14 @@
 .front-wheel{
     position: absolute;
     left: 86px;
+    bottom: -91px
 
 }
 .back-wheel{
     position: absolute;
     /* left: -165px; */
-    left: -142px;
+    left: -149px;
+    bottom: -90px;
 }
 @keyframes wheel {
     100%{
