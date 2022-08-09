@@ -1,0 +1,7 @@
+Javascript:- Js is a client-side and server-side language that allow you to make web pages interactive.
+it makes your website dynamic 
+    ==>By using js we can create some games, web/mobile app , real-time networking apps, command-line tools.
+    ==>Javacsript is executed by browser.
+    ==> Node is a JS runtime environment.
+
+Note: we can put script tag either in the head or body section
