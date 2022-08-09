@@ -18,14 +18,47 @@
 
     <!-- Inside the body -->
     <script>
+        "use strict";
         // Javascript instruction / command / statement
         document.body.style.backgroundColor = "pink";
+
         //output statement
-        document.write("Hello World!! ");
+        document.write("Hello World!!");
         // window.alert("This is alert");
         // alert("This is alert");
-        console.log("This is console to debug your code");
+        // console.log("This is console to debug your code");
+
+
+        //variables:
+        var name; //declaration
+        name="anshika"; //initialization
+
+
+        //dynamic behaviour of javascript
+        function sayHi(value){
+            if(true){
+                console.log("the statement is correct");
+            }
+            else{
+                console.log("the statement is incorrect");
+            }
+        }
+        sayHi("10");
+
+         //lastday="Sunday"; // not allowed
+         //console.log(lastday); //Uncaught ReferenceError: lastday is not defined in a strict mode
+
+         //Dialog box
+
+         alert("This is notification");
+         var isOk = confirm("Are you sure to go further")
+         console.log(isOk);
+
+         var fullName = prompt("Enter your full name");
+         console.log(fullName);
     </script>
+
+
 </body>
 
 </html>

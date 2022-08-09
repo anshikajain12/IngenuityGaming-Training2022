@@ -1,7 +1,61 @@
 Javascript:- Js is a client-side and server-side language that allow you to make web pages interactive.
-it makes your website dynamic 
+it makes your website dynamic.
+Note:- Javacsript is a typeless(loosly typed) language which makes Javacsript to be dynamic. 
+    /* var x = "anshika";
+        x= 10;
+    */
+
     ==>By using js we can create some games, web/mobile app , real-time networking apps, command-line tools.
     ==>Javacsript is executed by browser.
     ==> Node is a JS runtime environment.
 
-Note: we can put script tag either in the head or body section
+Note: we can put script tag either in the head or body section.
+
+//Single line comment
+
+/* multi line comments */
+
+variable in Javascript:- var , const, let
+
+Rules of creating a variable:-
+    1. variables are case senstive
+    2. variable name cannot start with numbers
+    3. It should be started from _ , character. (var _fname , fname) // allowed
+    4. only underscore is used as a special character. 
+    5. spaces are not allowed between variable names. (var f name= "name") // not allowed
+    6. you cannot use variable name as keyword. (var for = "abc")// not allowed
+
+Two types of datatype: 1. Primitive , 2. Reference 
+    1. Primitive:
+        a. string ---- var x="anshika"; var y='anshi';
+        b. boolean ---- var t= true ; var f = false;
+        c. number ----- var distance= 40;  var cal= 40.7;
+        d. Undefined ------ var x ;
+        e. null ---- var typeOfTraining= null; //typeof typeOfTraining => object
+
+    2. Reference: 
+
+Note:---- we can check the datatype of a variable by using "typeof" keyword.
+
+
+Javascript works in two mode: 1. sloppy mode 2. strict mode
+    1. sloppy mode:--  It is a by default mode
+        lastday="Sunday";
+        console.log(lastday); 
+
+    2. strict mode:--
+        "use strict";
+         lastday="Sunday"; // not allowed
+         console.log(lastday); //Uncaught ReferenceError: lastday is not defined
+         var lastday="Sunday"; // allowed
+         console.log(lastday);
+
+
+Dialog Boxes:
+    1. alert:-- use to display some message as a notification
+    2. prompt:-- use to take inputs from user
+    3. confirm:-- which takes inputs as "yes" or "no"
+
+Type conversion:
+    1. implicit
+    2. explicit
