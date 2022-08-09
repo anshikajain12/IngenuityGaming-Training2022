@@ -62,3 +62,5 @@ var number2=prompt("Enter number2");
 
 
  //Assignment4
+
+ console.log("Assignment 4")
