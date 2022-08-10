@@ -1,0 +1,22 @@
+Type of Operators:
+    1. Arithmetic operator:--- (+,-,*,/,%,++,--)
+        var a =20;
+        var b=20;
+        var c= a+b;
+    2. Relational operators:-- (<,>,>=,<=,==,===,!=,!==)
+        Note: Result in true or false format
+        console.log(a>b);
+    3. comparison operator:---- It compares the value (==)
+    4. Strict comparison operator:---- It compares the value as well as datatype (===)
+    5. Logical operator:---- (&& , || , !)
+    6. Assignment operator:--- (= , += , -= , /= , *= , %=)
+    7. ternary operator :--- 
+        result=condition ? Print if true :  otherwise print false;
+
+Javascript Hoisting:-- 
+    1. only declaration is possible on top(Hoisting) not the initialization
+    example 1:   x=10;
+                console.log(x);
+                var x; // allowed
+    example2:   console.log(x);
+                var x=10; // not allowed // output:   undefined

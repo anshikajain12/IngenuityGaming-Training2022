@@ -1,0 +1,44 @@
+Conditional statement :--- If, If-else ,nested if-else , ladder if-else
+
+
+Loops:---- 
+    a. initialization
+    b.Condition to stop the loop
+    c.increament/ decreament to move the loop next iteration
+        1. while loop: -- 
+            var i=1;
+            while(i<=10){
+                console.log("This is js loop "+i);
+                i++;
+            }
+
+        2. do while:---
+            var j=1;
+            do{
+                console.log(" this is js do while loop "+j);
+                j++;
+            }
+            while(j<1);
+
+        3. for loop:-----
+            for (let k = 1; k <=10; k++) {
+                console.log(" this is js for loop "+k);    
+            }
+        4. for each loop:---
+
+
+        5. Switch case:----
+            var a = 2;
+            switch(a){
+                case 1: console.log(" A is one"); 
+                    break;
+                case 2: console.log(" A is two");
+                    break;
+                case 3: console.log(" A is three");
+                    break;
+                case 4: console.log(" A is four");
+                    break;
+                case 5: console.log(" A is five");
+                    break;
+                default : console.log("A is not match")
+            }
