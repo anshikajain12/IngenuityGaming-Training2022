@@ -1,0 +1,16 @@
+way to create a object:
+    1. key- value pairs 
+        var person={
+            name:"Anshika",
+            age:20,
+            city:{cityName: "Jalesar" , pincode: 207302},
+            sector:[1,2,3,4,5],
+            details: function(){return this.name +" "+this.age+" "+ this.city.cityName}
+        };
+        
+    2. by creating a constructor
+        var student = new Object();
+        student.name="Anshika";
+        student.age=20;
+        student["city"]="Mathura";
+        console.log(student);

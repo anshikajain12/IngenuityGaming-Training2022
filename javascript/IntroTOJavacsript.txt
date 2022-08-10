@@ -33,7 +33,10 @@ Two types of datatype: 1. Primitive , 2. Reference
         d. Undefined ------ var x ;
         e. null ---- var typeOfTraining= null; //typeof typeOfTraining => object
 
-    2. Reference: 
+    2. Reference (Non Primitive Datatype): 
+        a. object
+        b. array
+        c. function
 
 Note:---- we can check the datatype of a variable by using "typeof" keyword.
 
