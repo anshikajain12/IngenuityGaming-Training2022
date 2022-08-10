@@ -1,7 +1,10 @@
-document.body.style.background="linear-gradient(90deg, rgba(84,100,124,1) 0%, rgba(94,195,213,1) 43%, rgba(42,65,42,1) 100%, rgba(128,210,147,0.9433656957928802) 100%)";
+document.body.style.background="linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(182,182,221,1) 46%, rgba(148,187,233,1) 100%)";
+document.body.style.background="rgb(238,174,202)";
 document.body.style.fontFamily="cursive";
 document.body.style.fontSize="25px";
 document.body.style.textAlign="center";
+document.body.style.marginTop="150px";
+document.getElementById("Heading").style.textShadow="2px 4px 5px black";
 
 document.getElementById("Heading").innerText="Introduction";
 var person_Obj={
@@ -14,3 +17,5 @@ var person_Obj={
     }
 }
 document.write(person_Obj.display());
+
+
