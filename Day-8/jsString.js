@@ -23,4 +23,7 @@ var strTwo = "frontend and backened development";
 console.log(strOne.charAt(1));
 console.log(strOne.match("/is/"));
 console.log(strTwo.repeat(3));
-console.log(strTwo.replace("/end/g","END"));
+console.log(strTwo.replace(/end/g,"END"));
+console.log(strTwo.replace('end',"END"));
+console.log(strTwo.search("end"));
+console.log(strTwo.split(" "));
