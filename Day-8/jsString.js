@@ -13,3 +13,11 @@ console.log(str);
 for (const ch of str) {
     console.log(ch);
 }
+
+
+var s = "HEllo" +" Hi "+ str1;
+console.log(s);
+
+var strOne = "JS is a programming language of web";
+var strTwo = "frontend and backened development";
+console.log(strOne.charAt(1))

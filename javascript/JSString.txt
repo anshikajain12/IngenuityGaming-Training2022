@@ -6,4 +6,13 @@ There are two ways to create a string
     2. Using string constructor
         var str= new String("This is string using constructor");
 
-Access (Iteration over String)
+        //Access (Iteration over String)
+
+        for (const ch of str) {
+            console.log(ch);
+        }
+
+concatenation of a string
+    var s = "HEllo" +" Hi"+ str1;
+    console.log(s);
+
