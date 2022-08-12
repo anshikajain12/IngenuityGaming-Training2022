@@ -20,4 +20,7 @@ console.log(s);
 
 var strOne = "JS is a programming language of web";
 var strTwo = "frontend and backened development";
-console.log(strOne.charAt(1))
+console.log(strOne.charAt(1));
+console.log(strOne.match("/is/"));
+console.log(strTwo.repeat(3));
+console.log(strTwo.replace("/end/g","END"));
