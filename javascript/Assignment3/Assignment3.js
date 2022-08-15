@@ -3,10 +3,13 @@ document.body.style.fontFamily="cursive";
 document.body.style.fontSize="20px";
 document.body.style.textAlign="center";
 document.body.style.marginTop="150px";
+document.body.style.textShadow="10px 10px 10px grey";
+
+document.write(`<h1> Assignment-3</h1>`)
 // remove extra white space from the string
 var x = prompt("Enter a String with whitespaces");
 var sentence = x.replace(/\s+/g,' ').trim();
-document.write(`string without extra whitespaces ${sentenec} <br>`);
+document.write(`string without extra whitespaces: ${sentence} <br>`);
 
 
 //Write a code to Copy an array into another using forEach()
@@ -16,7 +19,7 @@ arr.forEach(element => {
     copy.push(element);
     document.write(`Element of Array is: ${element} <br>`);
 });
-document.write("New array is: "+copy);
+document.write(`New array is: [${copy}]`);
 document.write("<br>");
 
 //Write a code in JavaScript to Check all Students passed  (not passing elements one by one to function)
