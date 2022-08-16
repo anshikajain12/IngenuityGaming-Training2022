@@ -1,0 +1,79 @@
+Parts of a function:
+    1. function definition:--    function myfun1(){ }    
+    2. function calling:--       myfun1();
+    3. function arguments:--
+    4. return value:--(It is optional)
+
+various function version:
+    1. function without arguments and without return:--
+        function myfun1(){    // function definition
+            console.log("this is function");
+        }
+        myfun1();
+
+    2. function with arguments and without return:--
+        function myfun2(a,b){    // function definition
+            console.log("this is function "+a+" " +b);
+        }
+        myfun2("Hello", "hey");
+
+    3. function with arguments and with return data:--
+        function myfun3(a,b){    // function definition
+            return a+b;
+        }
+        var x = myfun3(10,20);
+        console.log(x);
+
+    4. function without arguments and with return data:--
+        function myfun4(){    // function definition
+            return "hello";
+        }
+        var x = myfun4();
+        console.log(x);
+
+Default parameters:-
+    function add(a,b=0){
+        return a+b;
+    }
+    console.log(add(5)); // NAN
+
+parameters rules:-
+    a. js function definition do not specify data types for parameters
+    b. js function do not perform type checking on the passed arguments
+    c. js function do not check the number of arguments recieved
+
+
+we can also create a function using constructor:
+    var func = new Function("a" , "b" , "return a+b");
+    console.log("function using constructor: "+ func(2,3));
+
+function Expression:-- it means storing function definition inside a variable is called Expression. It is also known as Anonymous Function.
+    var a = 10;
+    var p = function(){
+        console.log("This if function Expression");
+        return "Hello Friends";
+    };
+    console.log(p());
+
+self invoking function:-- this is also an anonymous function and its get called itself
+    (function(){
+        console.log("This is self invoking function");
+    })();
+
+
+
+Function-Hoisting:--
+    sayHello(10,20);
+    function sayHello(a,b){
+        console.log(a+b);
+    }
+
+
+// hoisting of Expression function is not possible
+    adds(2,3); // not possible 
+    var adds= function(){
+        console.log(a+b);
+    }
+
+Types of function:
+    1.
