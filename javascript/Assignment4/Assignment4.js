@@ -1,4 +1,4 @@
-document.body.style.background="linear-gradient(90deg, rgba(84,100,124,1) 0%, rgba(90,121,136,1) 0%, rgba(112,187,143,1) 100%, rgba(128,210,147,0.9433656957928802) 100%)";
+// document.body.style.background="linear-gradient(90deg, rgba(84,100,124,1) 0%, rgba(90,121,136,1) 0%, rgba(112,187,143,1) 100%, rgba(128,210,147,0.9433656957928802) 100%)";
 document.body.style.fontFamily="cursive";
 document.body.style.fontSize="20px";
 document.body.style.textAlign="center";
@@ -65,7 +65,7 @@ function str(a){
         document.write(`Adding 'New!' word in a original String: "${a}" <br>`);
     }
 }
-str(prompt("Enter a string for creating of new string with the hepl of 'New!' word"));
+str(prompt("Enter a string for creating of new string with the help of 'New!' word"));
 
 //5. write a js program to create a new string from a given string taking first 3 characters 
 // and the last 3 character of a string and add them together . The string length must be 3 or more .
