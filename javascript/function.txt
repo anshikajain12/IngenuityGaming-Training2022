@@ -75,5 +75,71 @@ Function-Hoisting:--
         console.log(a+b);
     }
 
-Types of function:
-    1.
+Types of scope:
+    1. Block scope:-- there is no block scope in es5 , but onwards es6 blockl scope is available (let and const)
+        function scope1(){
+            {
+            var a = 10;
+            console.log(a);
+            }
+            console.log(a);
+        }
+        console.log(a); // a is not defined
+        scope1();
+
+    2. function scope:-- 
+        function scope2(){
+            var a = 10;
+            console.log(a);
+        }
+        scope2();
+        console.log(a);
+
+    3. global scope:--
+    function parent1() {
+        var v1 = 20;
+        console.log("Parent scope");
+        console.log(v1);
+        function child1() {
+            // var v1= 20;
+            console.log("child scope");
+            console.log(v1);
+        }
+        child1();
+        console.log(v1);
+    }
+    parent1();
+
+
+Let and const:
+    1. Let: it is a block scope variable
+    Note:--------  a variable that is create inside function without var is treated as global variable and have global scope 
+    function check(){
+        let data =20;
+        console.log(data);
+    }
+    check(); 
+    console.log(data); // not accessible
+
+
+
+
+REFERNCE OF name() FUNCTION IS ALSO STORED IN sums 
+SO WE CALL THE FUNCTION USING sums() AS WELL AS name()
+    function name(a,b) {
+        return a+b;
+    }
+    var sums = name;
+    console.log(sums(10,5));
+    console.log(name(10,5));
+
+
+Passing function to a function:--
+    function avg(a,b,sum){
+        return sum(a,b)/2;
+    }
+    function sum(a,b){
+        return a+b;
+    }
+    var result = avg(5,5,sum);
+    console.log("Result is : "+ result);
