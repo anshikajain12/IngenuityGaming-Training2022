@@ -165,6 +165,19 @@ function Person(){
         return "Name: " + this.name +" Age= "+ this.age;
     };
 }
+
+//IN ES6
+// class Person {
+//     constructor() {
+//         // properties
+//         this.name = "Anshika";
+//         this.age = 20;
+//         // methods
+//         this.details = function () {
+//             return "Name: " + this.name + " Age= " + this.age;
+//         };
+//     }
+// }
 var obj1 = new Person();
 console.log(obj1.name);
 obj1.name="Anshika Jain";
