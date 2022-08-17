@@ -9,24 +9,19 @@
       * {
         padding: 10px;
       }
-
-      body {
-        background: rgb(238, 174, 202);
-        background: linear-gradient(
-          90deg,
-          rgba(238, 174, 202, 1) 0%,
-          rgba(182, 182, 221, 1) 46%,
-          rgba(148, 187, 233, 1) 100%
-        );
-      }
       table {
-        /* display: flex; */
         width: 100%;
         justify-content: center;
         text-align: center;
         border-collapse: collapse;
       }
-      th{
+      tr:nth-child(even) {
+        background: #a4a69d;
+      }
+      tr:nth-child(odd) {
+        background: #e4e6e0;
+      }
+      th {
         font-size: 30px;
         font-weight: bold;
       }
@@ -39,6 +34,12 @@
       td a {
         text-decoration: none;
       }
+      /* td a:hover{
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        box-shadow: 10px 10px 10px white;
+      } */
     </style>
   </head>
 
