@@ -143,3 +143,5 @@ Passing function to a function:--
     }
     var result = avg(5,5,sum);
     console.log("Result is : "+ result);
+
+

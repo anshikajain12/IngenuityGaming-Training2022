@@ -1,0 +1,67 @@
+Invoking  FUNCTION as a method in objects:  
+
+    var obj={
+        firstName:"Sachin",
+        lastName:"Yadav",
+        //using function create method of object
+        fullName:function(){
+            return this.firstName + " "+ this.lastName;
+        },
+    };
+    console.log(obj.fullName());
+
+
+1. function call():--
+            EXAMPLE1: 
+            var person1={
+                firstName:"Sara",
+                lastName:"Khan",
+            }
+            //CALLING A FUNCTION FROM ANOTHER METHOD FUNCTION
+            console.log(obj.fullName.call(person1));
+
+        `   EXAMPLE2:
+            var person={
+                fullName:function(city,country){
+                    return this.firstName+" "+this.lastName+" "+city+" "+country;
+                }
+            }
+            var person1={
+                firstName:"Sara",
+                lastName:"Khan",
+            }
+            console.log(person.fullName.call(person1,"Mumbai","India"));
+
+2. function apply():--
+
+            var person2={
+                firstName:"Anshika",
+                lastName:"Jain"
+            };
+            console.log(person.fullName.apply(person2,["Delhi","India"]));
+
+
+
+3. function bind():--
+
+4. Arrow function:-- 
+            var add=(a,b)=>{
+                console.log(a+b);
+            }
+            var adding=(a,b)=> console.log(a+b);
+            var adding2=(a,b)=> a+b;
+
+            add(2,3);
+            adding(2,3);
+            console.log(adding2(2,6));
+
+
+            var myarr=[1,3,5,7];
+            myarr.forEach((element)=>console.log(element*10));
+
+5. map function:--
+
+
+6. filter function:--  
+7. callback function:--
+8. timing function:--
