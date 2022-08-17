@@ -42,7 +42,7 @@ function callbacks(){
 function clear(){
     clearInterval(timerId);
 }
-let timerId = setInterval(cvallbacks,3000);
+let timerId = setInterval(callbacks,3000);
 setTimeout(clear, 15000);
 
 // document.write(`<a href="/javascript/Assignment5/Assignmen5a.html"">click me</a>`)
