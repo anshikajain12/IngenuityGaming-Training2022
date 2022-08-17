@@ -60,8 +60,54 @@ Invoking  FUNCTION as a method in objects:
             myarr.forEach((element)=>console.log(element*10));
 
 5. map function:--
+            var newarr= myarr.map((i)=>i*10);
+            console.log(newarr);
 
+            var users=[
+                {firstName:"Anshika",lastName :"Jain"},
+                {firstName:"Ayushi", lastName : "Jain"},
+
+            ]
+            var fullname= users.map((u)=>{
+                return u.firstname+" "+u.lastname;
+            });
+            console.log(fullname);
 
 6. filter function:--  
+
+            
+            var ages=[32,33,16,40];
+            var result= ages.filter((age)=>{
+                return age>18;
+            });
+
+            
+            var ages=[32,33,16,40];
+            var result= ages.filter(filterage);
+
+            function filterage(age)=>{
+                return age>18;
+            }
+            console.log(result);
+
+
+
 7. callback function:--
+
+
+            setTimeout(callbacks,10000);
+            function callbacks(){
+                console.log("Hello friends");
+            }
+
+
+            setTimeout(() => {
+                console.log("heyy!! Good Morning");
+            }, 5000);
+
 8. timing function:--
+            function callbacks(){
+                console.log("Hello friends");
+            }
+            var myinterval =setInterval(callbacks,2000);
+            clearInterval(myinterval);
