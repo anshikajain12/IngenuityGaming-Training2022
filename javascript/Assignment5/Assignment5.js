@@ -33,17 +33,17 @@ numbers.forEach((element)=>cubeRoot.push(Math.cbrt(element)));
 document.write(`Cube Root of every element: [${cubeRoot}]`);
 
 
-//Program3
-document.write(`<h3>3. write a program to call a function in an interval of 3 sec for 5 times</h3>`)
-function callbacks(){
-    document.write("This is callback function <br>");
+// //Program3
+// document.write(`<h3>3. write a program to call a function in an interval of 3 sec for 5 times</h3>`)
+// function callbacks(){
+//     document.write("This is callback function <br>");
     
-}
-function clear(){
-    clearInterval(timerId);
-}
-let timerId = setInterval(callbacks,3000);
-setTimeout(clear, 15000);
+// }
+// function clear(){
+//     clearInterval(timerId);
+// }
+// let timerId = setInterval(callbacks,3000);
+// setTimeout(clear, 15000);
 
 // document.write(`<a href="/javascript/Assignment5/Assignmen5a.html"">click me</a>`)
 
