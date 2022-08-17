@@ -1,4 +1,4 @@
-document.body.style.background="linear-gradient(90deg, rgba(84,100,124,1) 0%, rgba(90,121,136,1) 0%, rgba(112,187,143,1) 100%, rgba(128,210,147,0.9433656957928802) 100%)";
+document.body.style.background="linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(230,230,238,1) 47%, rgba(148,187,233,1) 100%)";
 document.body.style.fontFamily="cursive";
 document.body.style.fontSize="20px";
 document.body.style.textAlign="center";
@@ -18,9 +18,9 @@ var person1={
     firstName:"Anshika",
     lastName:"Jain",
 }
-document.write(`syntax of call function: person.fullName.call(person1)<br>`);
+// document.write(`syntax of call function: person.fullName.call(person1)<br>`);
 document.write(`Call function: ${person.fullName.call(person1)} <br>`);
-document.write(`syntax of Apply function: person.fullName.apply(person1)<br>`);
+// document.write(`syntax of Apply function: person.fullName.apply(person1)<br>`);
 document.write(`Apply function: ${person.fullName.apply(person1)}`);
 
 
@@ -34,15 +34,17 @@ document.write(`Cube Root of every element: [${cubeRoot}]`);
 
 
 //Program3
-document.write(`<h3>3. write a program to call a function in an interval of 3 sec for 5 times</h3><br>`)
+document.write(`<h3>3. write a program to call a function in an interval of 3 sec for 5 times</h3>`)
 function callbacks(){
-    document.write("Hello friends <br>");
+    document.write("This is callback function <br>");
+    
 }
 function clear(){
     clearInterval(timerId);
 }
 let timerId = setInterval(callbacks, 3000);
 setTimeout(clear, 15000);
+// document.write(`<a href="/javascript/Assignment5/Assignmen5a.html"">click me</a>`)
 
 // for(let i=0;i<5;i++){
 //     setTimeout(callbacks,3000);
