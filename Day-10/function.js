@@ -1,4 +1,4 @@
-object
+// object
 var obj={
     firstName:"Sachin",
     lastName:"Yadav",
