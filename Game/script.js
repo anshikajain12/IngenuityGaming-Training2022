@@ -77,7 +77,7 @@ function start() {
         }
         var audio = new Audio("./audio/UC3CKCR-game-over-a.mp3");
     audio.play();
-        if (incpoints < 60) {
+        if (incpoints < 61) {
             chance.style.visibility = "visible";
             chance.innerText = "You loss the game";
     } else {
