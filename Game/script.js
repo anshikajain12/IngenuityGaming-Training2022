@@ -79,7 +79,7 @@ function start() {
     audio.play();
     if (incpoints < 61) {
       chance.style.visibility = "visible";
-      chance.innerText = "You loss the game";
+      chance.innerText = "You lost the game";
     } else {
       chance.style.visibility = "visible";
       chance.innerText = "You win the game";
