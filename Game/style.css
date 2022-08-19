@@ -1,5 +1,6 @@
 body {
     background-image: url("./Assests/bg10.jpg");
+    /* background-image: url("./Assests/bag.png"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: inherit;
@@ -108,3 +109,12 @@ body {
     top: 82%;
     left: 68%;
   }
+
+
+  #headinggame{
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    visibility: hidden;
+  }
+  
