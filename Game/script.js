@@ -9,7 +9,7 @@ var moles = document.querySelectorAll(".mole");
 var points = document.querySelectorAll(".points");
 
 var chance = document.querySelector("#headinggame");
-var timing= document.querySelector(".time");
+var timing= document.querySelectorAll(".time");
 
 
 //start button function
@@ -36,7 +36,7 @@ function start() {
   let timerIds = setInterval(() => {
     var i = randomIntFromInterval(1, 6);
     document.getElementById("mole" + i).style.visibility = "visible";
-    // document.getElementById("mole" + i).audio
+    
     document.getElementById("mole" + i).onmouseover = increamentbutton;
 
     //timer function
@@ -77,7 +77,7 @@ function start() {
         }
         var audio = new Audio("./audio/UC3CKCR-game-over-a.mp3");
     audio.play();
-        if (incpoints < 30) {
+        if (incpoints < 60) {
             chance.style.visibility = "visible";
             chance.innerText = "You loss the game";
     } else {
