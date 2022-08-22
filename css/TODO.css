@@ -1,32 +1,48 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+
+/* ------------Initial Phase CSS--------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  background: rgb(177, 147, 160);
-  background: linear-gradient(
-    90deg,
-    rgb(162 101 173) 0%,
-    rgba(71, 71, 173, 1) 100%,
-    rgba(148, 187, 233, 1) 100%
-  )
+  background: linear-gradient(120deg, skyblue, blue);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }
-header{
-    display: flex;
-    justify-content: center;
-    font-size: xx-large;
-    font-weight: bolder;
-    color: white;
-    margin-top: 20px;
+header,
+form {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  font-size: 40px;
+}
+
+form input,
+form button {
+  padding: 10px;
+  border: none;
+  font-size: 24px;
+  background: white;
+  outline: none;
+}
+form button {
+  color: blue;
+  background-color: white;
+  cursor: pointer;
+}
+form button:hover {
+  color: white;
+  background-color: skyblue;
 }
 
 
-
-
-
-
-/*  New List */
+/* .................................... New List ....................................................*/
 .todo-container{
     display: flex;
     justify-content: center;
@@ -60,4 +76,12 @@ header{
 }
 .trashbtn{
     background-color: deeppink;
+}
+
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+.checked{
+    opacity: .5;
+    text-decoration: line-through;
 }
