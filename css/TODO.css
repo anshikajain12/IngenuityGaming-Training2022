@@ -66,7 +66,7 @@ form button:hover {
     flex: 1;
     margin: 0 10px;
 }
-.cmpbtn, .trashbtn{
+.cmpltbtn, .deltbtn{
     color: white;
     background-color: teal;
     border: none;
@@ -74,7 +74,7 @@ form button:hover {
     outline: none;
     font-size: 16px;
 }
-.trashbtn{
+.deltbtn{
     background-color: deeppink;
 }
 
