@@ -94,13 +94,13 @@
 
 @keyframes car {
     0%{
-        transform: translateY(-5px);
+        transform: translateY(-3px);
     }
     50%{
         transform: translateY(0px);
     }
     100%{
-        transform: translateY(5px);
+        transform: translateY(-3px);
     }
     
 }
