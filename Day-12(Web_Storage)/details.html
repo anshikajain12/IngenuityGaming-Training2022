@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+   <h1>Local Storage | Session storage</h1>
+   <h2>Data Recieved from Storage</h2>
+   <p id="output"></p> 
+   <a href="./localStorage.html">Back Page</a>
+
+   <script>
+    //selectors
+    // var output = document.getElementById("output");
+
+    // //Recieving data from local storage
+    // var data = window.localStorage.getItem("Info");
+
+    // if(data==null){
+    //     output.innerText="No data Avaialable in Local storage";
+    // }
+    // else {
+    //     output.innerText=data;
+    // }
+
+
+
+
+
+    var output = document.getElementById("output");
+
+    //Recieving data from local storage
+    var data =JSON.parse(window.sessionStorage.getItem("Info"));
+
+    if(data==null){
+        output.innerText="No data Avaialable in Session storage";
+    }
+    else {
+        output.innerText=data.uname +" "+data.pss+" " +data.ages;
+    }
+   </script>
+</body>
+</html>

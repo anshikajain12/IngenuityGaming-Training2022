@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+</head>
+<body>
+    <h1>Local Storage | Session Storage</h1>
+    <pre>
+        <label for="">Enter UserName:</label> <input type="text" id="userName">
+        <label for="">Enter Password:</label> <input type="password" id="pwd">
+        <label for="">Enter your age:</label> <input type="number" id="age">
+
+
+        <button id="btn1">Store Information</button> <button id="remove">Remove Information</button>
+    </pre>
+
+    <p id="output"></p>
+
+    <a href="./details.html">See Details</a>
+    <script>
+        //selectors 
+        // var uname = document.getElementById("userName");
+        // var btns = document.getElementById("btn1");
+        // var remove = document.getElementById("remove");
+        // btns.onclick=storeData;
+        // function storeData(){
+        //     var data = uname.value;
+        //     window.localStorage.setItem("Info",data);
+        //     alert("data stored in local storage");
+        // }
+
+        // remove.onclick=removeData;
+        // function removeData(){
+        //     window.localStorage.removeItem("Info");
+        //     output.innerText="Data removed: " +new Date().toLocaleDateString();
+        // }
+
+
+
+        var uname = document.getElementById("userName");
+        var pass = document.getElementById("pwd");
+        var age = document.getElementById("age");
+
+        var btns = document.getElementById("btn1");
+        var remove = document.getElementById("remove");
+        var output = document.getElementById("output");
+        btns.onclick=storeData;
+        function storeData(){
+            // var data = uname.value;
+            // var pss= pass.value;
+            // var ages= age.value;
+            var data ={
+                uname: uname.value,
+                pss:pass.value,
+                ages: age.value
+            };
+            window.sessionStorage.setItem("Info",JSON.stringify(data));
+            // window.sessionStorage.setItem("password",pss);
+            // window.sessionStorage.setItem("Age",ages);
+            alert("data stored in local storage");
+        }
+
+        remove.onclick=removeData;
+        function removeData(){
+            window.sessionStorage.removeItem("Info");
+            output.innerText="Data removed: " +new Date().toLocaleDateString();
+        }
+    </script>
+
+</body>
+</html>
