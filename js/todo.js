@@ -42,7 +42,6 @@ btn.onclick= function createToDo(e){
     localStorage.setItem("Information", JSON.stringify([...JSON.parse(localStorage.getItem("Information") || "[]"), { tasks: todoinput.value}]));
     
     todoinput.value="";
-    // localStorage.clear();
     
 };
 
@@ -56,11 +55,10 @@ todoList.onclick=function checkbtn(e){
         // console.log(parentNode);
 
         // remove from the localstorage
-        window.localStorage.removeItem("Information");
-
-        //remove from the session storage
-        window.sessionStorage.removeItem("Information");
-
+        // localStorage.removeItem("Information");
+        let arr = Array.from(JSON.parse(localStorage.getItem("Information")));
+        
+    
         parentNode.remove();
     }
     else if(check.classList[0] ==  'cmpbtn'){
