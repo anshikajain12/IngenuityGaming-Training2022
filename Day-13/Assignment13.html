@@ -4,162 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loader Animation</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      /* .main{
-        width: 100vw;
-        height: 100vh;
-        background-color: rgb(144, 243, 185);
-        display: flex;
-        display: none;
-      }
-      
-      button{
-        background-color: blue;
-        width: 105px;
-        height: 50px;
-        border-radius: 8%;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: auto;
-        display: flex;
-        color: white;
-        border: 2px solid blue;
-       
-      } */
-      .container {
-        height: 100vh;
-        width: 100%;
-        background-image: linear-gradient(
-          to right top,
-          rgb(219, 219, 236),
-          rgb(216, 185, 201)
-        );
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      .box {
-        width: 150px;
-        height: 150px;
-        border: 20px solid rgba(245, 232, 232, 0.637);
-        border-top: 20px solid white;
-        border-radius: 50%;
-        animation: loader 2s linear infinite;
-      }
-      @keyframes loader {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      p {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 30px;
-        font-weight: bold;
-        color: white;
-        text-transform: uppercase;
-        animation: popup 2s linear infinite;
-      }
-      @keyframes popup {
-        0% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
-    </style>
+    <title>TO DO List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../css/TODO.css" />
   </head>
+
   <body>
-        <div class="container">
-          <div class="box"></div>
-          <br />
-          <p>Loading</p>
-        </div>
-        
-        <!-- <div class="main">
-            <button onclick="popup()">click me</button>
-        </div> -->
 
+    <!-- Loader -->
+    <div class="container">
+      <div class="box"></div>
+      <br />
+      <p>Loading</p>
+    </div>
 
-
-
-
-        <!-- <script>
-            window.onload=function(){
-               var pop=setInterval(()=>
-              {
-                  stoploader();
-                  clearInterval(pop);
-              },3000);
-          };
-          function stoploader(){
-              document.querySelector('.container').style.display="none";
-               document.querySelector('.main').style.display="block";
-          
-          //clearInterval(pop);
-          }
-          setTimeout(openpopup, 7000);
-               function openpopup()
-             {
-              
-              var url="./form.html";
-              var Windowsize="height=500 , width=500";
-              var newi=window.open(url,"_blank",Windowsize);
-              console.log("hi");
-              newi.moveTo(500,200);
-              //Interval(pop);
-              
-             }
-          
-          
-             function popup()
-             {
-              var url="../Day-13/contactform.html";
-              var Windowsize="height=500 , width=500";
-              var newi=window.open(url,"_blank",Windowsize);
-              console.log("hi");
-              newi.moveTo(500,200);
-             }
-          
-          </script> -->
-    <script>
-      window.onload = function () {
-        setTimeout(() => {
-          website();
-        }, 3000);
-        setTimeout(() => {
-            console.log("timer")
-          stopLoader();
-        }, 9000);
-      };
-
-      function website() {
-        document.querySelector(".container").style.display = "none";
-        var url1 = "../Day-4/Assignment5.html";
-        var windowsize1 = "height=500, width=500";
-        var newWindow1 = window.open(url1, "_blank", windowsize1);
-      }
-      function stopLoader() {
-        var url = "../Day-13/contactform.html";
-        var windowsize = "height=500, width=500";
-        var newWindow = window.open(url, "Contact Page", windowsize);
-        newWindow.moveTo(400, 100);
-      }
-     </script>
-
+<!-- todo list -->
+    <div id="todo">
+      <header>To-do List</header>
+      <form action="">
+        <input type="text" class="todo-input" />
+        <button>
+          <i class="fa fa-plus-square" arial="hidden"></i>
+        </button>
+      </form>
+      <div class="todo-container">
+        <ul class="todo-list"></ul>
+      </div>
+    </div>
+    <script src="../js/assignment13.js"></script>
   </body>
 </html>
