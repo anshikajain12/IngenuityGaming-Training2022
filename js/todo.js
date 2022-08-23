@@ -81,8 +81,9 @@ var ll = 0;
 ll = Number(window.localStorage.getItem("numberItems"));
 console.log(ll);
 
-for (var i = 0; i < 50; i++) {
+for (var i = 0; i < ll; i++) {
   var rr = "tt" + i;
+  console.log(rr)
   if (window.localStorage.getItem(rr) == null) {
     break;
   } else {
