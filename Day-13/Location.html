@@ -16,6 +16,18 @@
         function redirect(){
            window.location.assign("https://beta-labs.in");
         }
+
+        window.onload=function(){
+            setInterval(() => {
+                if(navigator.onLine){
+                    console.log("you're online");
+                }
+                else{
+                    console.log("you're offline");
+                }
+            }, 3000);
+
+        }
     </script>
 </body>
 </html>
