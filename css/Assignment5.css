@@ -188,9 +188,10 @@ h3 {
 }
 #contact {
   margin-top: 20px;
+  padding: 20px 0px;
   background-color: #8f7d7d;
   width: 100%;
-  height: 320px;
+  height: 370px;
 }
 .sect,
 .contact {
