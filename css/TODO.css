@@ -3,7 +3,7 @@
 .container{
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(to right top,blue,deeppink);
+  background-image: linear-gradient(to right top,rgb(219, 219, 236),rgb(216, 185, 201));
   display: flex;
   justify-content: center;
   align-items: center;
