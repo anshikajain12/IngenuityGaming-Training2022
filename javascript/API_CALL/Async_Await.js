@@ -6,7 +6,7 @@ async function getApiData(url) {
 
   var data = await fetch(url);
   var result = await data.json();
-  //   console.log(result)
+    console.log(result)
   displaydata(result);
 }
 
