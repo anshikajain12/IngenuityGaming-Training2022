@@ -134,7 +134,7 @@
           </script> -->
     <script>
       window.onload = function () {
-        setInterval(() => {
+        setTimeout(() => {
           website();
         }, 3000);
       };
@@ -146,7 +146,7 @@
       function website() {
         document.querySelector(".container").style.display = "none";
         var url1 = "../Day-4/Assignment5.html";
-        var windowsize1 = "height=500, width=500";
+        var windowsize1 = "height=700, width=1200";
         var newWindow1 = window.open(url1, "_top", windowsize1);
       }
       function stopLoader() {
