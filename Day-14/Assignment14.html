@@ -40,7 +40,7 @@
       .container {
         width: 464px;
         height: 100px;
-        background-color: #bacaba;
+       
         display: flex;
         align-items: center;
         justify-content: center;
@@ -70,12 +70,14 @@
       var s = document.querySelector(".connectivity");
       var i = document.querySelector(".material-icons");
       var main = document.getElementById("statusDiv");
+      var cont = document.querySelector(".container");
      
       function onlineStatus() {
         s.innerHTML = "You are Online &#124;";
         s.style.color = "green";
         i.innerHTML = "wifi";
         i.style.color = "green";
+        cont.style.background="#bacaba";
         main.style.border = "1px solid rgb(74, 226, 81)";
         console.log("Online");
       }
