@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+
+    <title>Network Connectivity</title>
+    <style>
+      body {
+        background-color: thistle;
+        font-family: "Roboto", sans-serif;
+      }
+      .connectivity {
+        text-align: center;
+      }
+      .material-icons {
+        font-size: 40px;
+        margin: 16px;
+      }
+      #statusDiv {
+        width: 327px;
+        height: 70px;
+        border-radius: 10%;
+        display: flex;
+        background-color: #fffefe9c;
+      }
+      .container {
+        width: 464px;
+        height: 100px;
+        background-color: #bacaba;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+      }
+      button {
+        margin: 20px;
+        font-size: 33px;
+        background-color: #ebe5e59c;
+        border: none;
+        width: 53px;
+        height: 38px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="statusDiv">
+        <span class="material-icons"> </span>
+        <h2 class="connectivity"></h2>
+
+        <button><i class="fa fa-times" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+    <script>
+      var s = document.querySelector(".connectivity");
+      var i = document.querySelector(".material-icons");
+      var main = document.getElementById("statusDiv");
+     
+      function onlineStatus() {
+        s.innerHTML = "You are Online &#124;";
+        s.style.color = "green";
+        i.innerHTML = "wifi";
+        i.style.color = "green";
+        main.style.border = "1px solid rgb(74, 226, 81)";
+        console.log("Online");
+      }
+      function offlineStatus() {
+        s.innerHTML = "You are Offline &#124;";
+        s.style.width = "468px";
+        s.style.color = "red";
+        i.innerHTML = "wifi_off";
+        i.style.color = "red";
+        main.style.border = "1px solid red";
+        console.log("offline");
+      }
+
+      window.onload = function () {
+        setInterval(() => {
+          if (navigator.onLine) {
+            onlineStatus();
+          } else {
+            offlineStatus();
+          }
+        }, 500);
+      };
+    </script>
+  </body>
+</html>
