@@ -5,7 +5,7 @@
 }
 .container{
     /* background-image: url("Assests/covid-19.jpg"); */
-    /* background-image: url("Assests/wallpaper.avif"); */
+    background-image: url("Assests/wallpaper.avif");
     background-repeat: no-repeat;
     background-size:cover;
     width: 100%;
