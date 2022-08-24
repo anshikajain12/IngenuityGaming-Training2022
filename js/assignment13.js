@@ -126,7 +126,7 @@ btn.onclick = function createToDo(e) {
 
   setTimeout(() => {
     openwindow();
-  }, 10000);
+  }, 5000);
 function openwindow() {
 //    document.querySelector(".container").style.display = "none";
 //   document.getElementById("todo").style.display = "none";
