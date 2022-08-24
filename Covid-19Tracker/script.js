@@ -1,52 +1,44 @@
 const API_URL = "https://api.covid19api.com/summary";
-function getApi(url){
-    // var data = await fetch(url);
-    // var result= await data.json();
-    // console.log(result);
-    // displaydata(result);
-    fetch(url)
-    .then((val) => {
-        // return val.json();
-        return displaydata(val.json())
-    })
-    .then((res)=>{
-        
-            return displaydata(JSON.stringify(res));   
-            // displaydata(res.json)
-    })
-    
-    
-    .catch((err) => console.log(err));
+
+function getApiData(url) {
+  return new Promise((resolve, reject) => {
+
+    var request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.send();
+
+    request.onload = () => {
+    //   console.log(request);
+
+      if (request.status === 200) {
+        resolve(request.response);
+      } else {
+        reject("Not able to fetch Data");
+      }
+    };
+  });
 }
 
-getApi(API_URL);
+getApiData(API_URL)
+  .then((val) => {
+    console.log(JSON.parse(val));
+    displayData(JSON.parse(val));
+  })
+  .catch((err) => console.log("Error" + err));
 
 
-function displaydata(serverData){
-console.log(serverData);
-    for(var datas of serverData){
-        // console.log(datas[0]);
-        
-        // let newH51= document.createElement('h5');
-        // let newH52= document.createElement('h5');
-        // let newH53= document.createElement('h5');
-        // let newH54= document.createElement('h5');
-        // let newH55= document.createElement('h5');
-        // let newH56= document.createElement('h5');
-        
-        // newH51.innerText=`${datas.countries[0].country}`;
-        // newH52.innerText=`${datas.countries[0].country}`;
-        // newH53.innerText=`${datas.countries[0].country}`;
-        // newH54.innerText=`${datas.countries[0].country}`;
-        // newH55.innerText=`${datas.countries[0].country}`;
-        // newH56.innerText=`${datas.countries[0].country}`;
 
-        // document.getElementById("a1").appendChild(newH51);
-        // document.getElementById("a2").appendChild(newH52);
-        // document.getElementById("a3").appendChild(newH53);
-        // document.getElementById("a4").appendChild(newH54);
-        // document.getElementById("a5").appendChild(newH55);
-        // document.getElementById("a6").appendChild(newH56);
-        
+  function displayData(serverData) {
+    var i=prompt("enter a number between 0 to 199");
+    
+    console.log(serverData.Countries[1].Country);
+    document.getElementById("y1").innerHTML=serverData.Countries[i].Country;
+    document.getElementById("y2").innerHTML=serverData.Countries[i].Date;
+    document.getElementById("y3").innerHTML=serverData.Countries[i].NewDeaths;
+    document.getElementById("y4").innerHTML=serverData.Countries[i].TotalConfirmed;
+    document.getElementById("y5").innerHTML=serverData.Countries[i].TotalDeaths;
+    document.getElementById("y6").innerHTML=serverData.Countries[i].NewConfirmed;
     }
-}
+
+
+    
