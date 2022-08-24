@@ -1,7 +1,9 @@
-// In JS function are first class citizens
-    //1. Function can be assigned to a vairable
-    // 2. Function can be used as an arguments
-    // 3. Function can also used as return statement
+// Es6 Promise
+// 1.ita a way of communicating with AudioProcessingEvent
+// 2.its an Object that returns a value that hope to recieve in future but not right now
+// 3.promise is well suited for handling Asynchronous operations
+// 4.promise has three states .Pending ,fullfilled,rejected
+
 
 //callback:
     // 1. Function can be used as an arguments
