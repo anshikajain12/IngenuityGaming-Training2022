@@ -20,15 +20,13 @@ function getApiData(url) {
 
 getApiData(API_URL)
   .then((val) => {
-    // console.log(JSON.parse(val));
+
     displayData(JSON.parse(val));
   })
   .catch((err) => console.log("Error" + err));
 
 function displayData(serverData) {
-  // var i=prompt("enter a number between 0 to 199");
 
-  // console.log(serverData.Countries[1].Country);
   var s = document.getElementById("select");
 
   for (var i = 0; i < serverData.Countries.length; i++) {
@@ -56,7 +54,5 @@ function displayData(serverData) {
     }
   };
 
-  //   for (var i = 0; i < s.length; i++) {
-  //     var checkvalue = s.options[s.selectedIndex].value;
-  //     console.log(checkvalue);
+ 
 }
