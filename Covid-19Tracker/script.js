@@ -48,16 +48,11 @@ function displayData(serverData) {
       document.getElementById("y6").innerHTML = "";
     } else {
       var checkvalue = s.options[s.selectedIndex].value;
-      document.getElementById("y2").innerHTML =
-        serverData.Countries[checkvalue].Date;
-      document.getElementById("y3").innerHTML =
-        serverData.Countries[checkvalue].NewDeaths;
-      document.getElementById("y4").innerHTML =
-        serverData.Countries[checkvalue].TotalConfirmed;
-      document.getElementById("y5").innerHTML =
-        serverData.Countries[checkvalue].TotalDeaths;
-      document.getElementById("y6").innerHTML =
-        serverData.Countries[checkvalue].NewConfirmed;
+      document.getElementById("y2").innerHTML =serverData.Countries[checkvalue].Date;
+      document.getElementById("y3").innerHTML =serverData.Countries[checkvalue].NewDeaths;
+      document.getElementById("y4").innerHTML =serverData.Countries[checkvalue].TotalConfirmed;
+      document.getElementById("y5").innerHTML =serverData.Countries[checkvalue].TotalDeaths;
+      document.getElementById("y6").innerHTML =serverData.Countries[checkvalue].NewConfirmed;
     }
   };
 
