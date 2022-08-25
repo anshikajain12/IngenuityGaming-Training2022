@@ -30,6 +30,91 @@
 </head>
 <body>
     <h1>Canvas API Demo</h1>
-    <canvas id="canvas" width="500" height="500"></canvas>
+    <canvas id="canvas" width="600" height="500"></canvas>
 </body>
+
+<script>
+    //selector
+    var canvas= document.getElementById("canvas");
+    const ctx = canvas.getContext('2d');
+    // canvas.width=window.innerWidth;
+    // canvas.width="100";
+    // canvas.height=window.innerHeight;
+
+
+    //Filled Rectange
+    ctx.fillStyle="red";
+    ctx.fillRect(50,50,150,100);
+
+
+    //Stroke Rectange
+    ctx.lineWidth=5;
+    ctx.strokeStyle="blue";
+    ctx.strokeRect(250,50,150,100);
+
+
+    //Rounded Rectange
+    ctx.fillStyle="orange";
+    ctx.roundRect(450,50,100,100,[10]);
+    ctx.fill();
+
+
+    //Clear canvas command 
+    ctx.clearRect(40,40,140,90);
+    // ctx.clearRect(0,0,canvas.width,canvas.height);
+
+
+    //
+    ctx.font="30px Arial";
+    ctx.fillStyle="green";
+    ctx.fillText("Hello World",200,200);
+
+
+    ctx.lineWidth=1;
+    ctx.strokeStyle="purple";
+    ctx.strokeText("Hello World",300,230);
+
+    
+    
+    //Draw Triangle
+    //Path
+    ctx.beginPath();
+    ctx.moveTo(50,50);
+    ctx.lineTo(150,50);
+    ctx.lineTo(100,200);
+    // ctx.lineTo(50,50);
+    ctx.closePath();
+    ctx.fillStyle="coral";
+    ctx.fill();
+    
+    
+    
+    ctx.beginPath();
+    ctx.moveTo(200,50);
+    ctx.lineTo(150,200);
+    ctx.lineTo(250,200);
+    ctx.closePath();
+    ctx.stroke();
+    
+    
+    //Filled Rectange
+    ctx.beginPath();
+    ctx.rect(300,50,150,100);
+    ctx.fillStyle="blue";
+    ctx.fill();
+    
+    
+    //Draw arc
+    ctx.beginPath();
+    // ctx.arc(400,300,100,0);
+    ctx.fillStyle="purple";
+    ctx.arc(400,300,100,0,Math.PI*2);
+    ctx.fill();
+    
+    
+    // radian = (Math.PI)*2 (FULL CIRCLE)
+    //radian = (MATH.PI) (HALF CIRCLE)
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    
+</script>
 </html>
