@@ -29,32 +29,39 @@ function displayData(serverData) {
   // var i=prompt("enter a number between 0 to 199");
 
   // console.log(serverData.Countries[1].Country);
-  const s = document.createElement("select");
-  s.name = "countries";
+  var s = document.getElementById("select");
 
   for (var i = 0; i < serverData.Countries.length; i++) {
-    const o = document.createElement("option");
+    var o = document.createElement("option");
     o.text = serverData.Countries[i].Country;
     o.value = i;
     s.appendChild(o);
   }
   var x = document.querySelector("form").appendChild(s);
 
+  s.onclick = function () {
+    if (s.options[s.selectedIndex].value==="Country Name") {
+      document.getElementById("y2").innerHTML = "";
+      document.getElementById("y3").innerHTML = "";
+      document.getElementById("y4").innerHTML = "";
+      document.getElementById("y5").innerHTML = "";
+      document.getElementById("y6").innerHTML = "";
+    } else {
+      var checkvalue = s.options[s.selectedIndex].value;
+      document.getElementById("y2").innerHTML =
+        serverData.Countries[checkvalue].Date;
+      document.getElementById("y3").innerHTML =
+        serverData.Countries[checkvalue].NewDeaths;
+      document.getElementById("y4").innerHTML =
+        serverData.Countries[checkvalue].TotalConfirmed;
+      document.getElementById("y5").innerHTML =
+        serverData.Countries[checkvalue].TotalDeaths;
+      document.getElementById("y6").innerHTML =
+        serverData.Countries[checkvalue].NewConfirmed;
+    }
+  };
 
-  var u = 0;
-  for (var i = 0; i < s.length; i++) {
-    var checkvalue = s.options[s.selectedIndex].value;
-    console.log(checkvalue);
-
-    document.getElementById("y2").innerHTML = serverData.Countries[checkvalue].Date;
-    document.getElementById("y3").innerHTML = serverData.Countries[checkvalue].NewDeaths;
-    document.getElementById("y4").innerHTML =
-      serverData.Countries[u].TotalConfirmed;
-    document.getElementById("y5").innerHTML =
-      serverData.Countries[u].TotalDeaths;
-    document.getElementById("y6").innerHTML =
-      serverData.Countries[u].NewConfirmed;
-  }
-
-  
+  //   for (var i = 0; i < s.length; i++) {
+  //     var checkvalue = s.options[s.selectedIndex].value;
+  //     console.log(checkvalue);
 }
