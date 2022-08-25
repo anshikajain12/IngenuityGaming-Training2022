@@ -20,7 +20,7 @@ function getApiData(url) {
 
 getApiData(API_URL)
   .then((val) => {
-    console.log(JSON.parse(val));
+    // console.log(JSON.parse(val));
     displayData(JSON.parse(val));
   })
   .catch((err) => console.log("Error" + err));
@@ -32,17 +32,29 @@ function displayData(serverData) {
   const s = document.createElement("select");
   s.name = "countries";
 
-  for (var i=0;i<serverData.Countries.length;i++) {
+  for (var i = 0; i < serverData.Countries.length; i++) {
     const o = document.createElement("option");
     o.text = serverData.Countries[i].Country;
+    o.value = i;
     s.appendChild(o);
   }
-  var x= document.querySelector("form").appendChild(s);
+  var x = document.querySelector("form").appendChild(s);
+
+
+  var u = 0;
+  for (var i = 0; i < s.length; i++) {
+    var checkvalue = s.options[s.selectedIndex].value;
+    console.log(checkvalue);
+
+    document.getElementById("y2").innerHTML = serverData.Countries[checkvalue].Date;
+    document.getElementById("y3").innerHTML = serverData.Countries[checkvalue].NewDeaths;
+    document.getElementById("y4").innerHTML =
+      serverData.Countries[u].TotalConfirmed;
+    document.getElementById("y5").innerHTML =
+      serverData.Countries[u].TotalDeaths;
+    document.getElementById("y6").innerHTML =
+      serverData.Countries[u].NewConfirmed;
+  }
+
   
-  
-  document.getElementById("y2").innerHTML = serverData.Countries[i].Date;
-  document.getElementById("y3").innerHTML = serverData.Countries[i].NewDeaths;
-  document.getElementById("y4").innerHTML =serverData.Countries[i].TotalConfirmed;
-  document.getElementById("y5").innerHTML = serverData.Countries[i].TotalDeaths;
-  document.getElementById("y6").innerHTML =serverData.Countries[i].NewConfirmed;
 }
