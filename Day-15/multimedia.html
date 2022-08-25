@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimedia Content</title>
+  </head>
+  <body>
+    <!-- <audio controls src="../Game/audio/JKL83NH-video-game-win.mp3">play</audio>  -->
+    <!-- <audio controls  id="myaudio">
+      <source src="../Game/audio/JKL83NH-video-game-win.mp3" type="audio/mp3" />
+      
+    </audio> -->
+
+
+    <!-- loop autoplay muted -->
+    <button id="btn">Play</button>
+    <!-- <video controls width="400" height="400" autoplay>
+      <source src="production ID_5091624.mp4" type="video/mp4" />
+    </video> -->
+
+    <script>
+      var myaudio = document.getElementById("myaudio");
+      var btn = document.getElementById("btn");
+      btn.onclick = function () {
+        myaudio.play();
+        myaudio.src="../Game/audio/mixkit-retro-arcade-casino-notification-211.wav";
+        myaudio.play();
+        myaudio.load();
+        myaudio.autoplay=true;
+        if(myaudio.muted== true){
+            myaudio.muted=false;
+        }
+        else{
+            myaudio.muted=true;
+        }
+      };
+
+
+    //   var audio = new Audio();
+    //   audio.src="../Game/audio/mixkit-retro-arcade-casino-notification-211.wav";
+    //   audio.play();
+    //   audio.loop=true;
+    //   audio.play();
+
+
+      var video = new video();
+      video.scr="production ID_5091624.mp4";
+      video.play();
+    </script>
+  </body>
+</html>
