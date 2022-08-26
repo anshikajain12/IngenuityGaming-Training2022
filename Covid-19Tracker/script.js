@@ -52,13 +52,11 @@ function displayData(serverData) {
       document.getElementById("y5").innerHTML =serverData.Countries[checkvalue].TotalDeaths;
       document.getElementById("y6").innerHTML =serverData.Countries[checkvalue].NewConfirmed;
     }
+    setTimeout(()=>{
+      var audio = new Audio("./audio/covid19.mp3");
+      audio.play();
+    },2000);
   };
-
-  // setInterval(()=>{
-    // var video = new Video("/Covid-19Tracker/video/istockphoto-1308321360-640_adpp_is.mp4");
-    // video.play();
-    // console.log("x")
-  // },3000)
-
+ 
 
 }
