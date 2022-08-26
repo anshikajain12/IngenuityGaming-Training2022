@@ -38,7 +38,7 @@ section {
     rgba(148, 187, 233, 1) 100%
   );
   border-radius:  105px 40px;
-  animation: slidein 4s 1;
+  animation: slidein 3s 1;
   
 }
 @keyframes slidein {
