@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    min-height: 100vh;
+    color: white;
+    background-image: url("./assests/bg2.webp");
+    /* background-color: rgba(0, 0, 0, 0.755); */
+    font-family: arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h1{
+    font-weight: bolder;
+    font-size: 59px;
+    font-family: sans-serif;
+    text-shadow:  5px 5px 5px black;
+    color: #a99ccc;
+  }
+  #canvas{
+    margin-top: 10px;
+    /* background-color: azure; */
+    border-radius: 10px;
+    /* display: none; */
+    visibility: hidden;
+  }
+  
+  #source {
+    display: none;
+  }
+  #btn{
+    width: 108px;
+    height: 52px;
+    border: 1px solid white;
+    background-color: #271b5c;
+    color: #fbfbfb;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 15px;
+    text-shadow: 3px 5px 7px black;
+    font-weight: bold;
+    margin-top: -76px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
