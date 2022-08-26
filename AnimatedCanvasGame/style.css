@@ -23,10 +23,9 @@
   }
   #canvas{
     margin-top: 10px;
-    /* background-color: azure; */
-    border-radius: 10px;
-    /* display: none; */
+    border-radius: 115px;
     visibility: hidden;
+    border: 1px solid #5c1c58;
   }
   
   #source {

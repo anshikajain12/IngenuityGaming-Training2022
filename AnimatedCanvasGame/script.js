@@ -12,6 +12,10 @@ btns.onclick=function(){
     audio.play();
     btns.style.visibility="hidden";
     canvas.style.visibility="visible";
+    document.body.style.background='url("https://media.istockphoto.com/photos/dynamic-retro-background-picture-id1200128505?k=20&m=1200128505&s=612x612&w=0&h=MMMd1V-Beq6478H4-O5aGJ6pLkMcWrdTJi34jPbDA68=")';
+    document.body.style.backgroundRepeat="no-repeat";
+  document.body.style.backgroundSize="cover";
+  document.body.style.backgroundPosition="inherit";
 }
 const player = {
   w: 50,
