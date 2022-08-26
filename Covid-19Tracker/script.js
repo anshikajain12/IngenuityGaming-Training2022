@@ -54,5 +54,11 @@ function displayData(serverData) {
     }
   };
 
- 
+  // setInterval(()=>{
+    // var video = new Video("/Covid-19Tracker/video/istockphoto-1308321360-640_adpp_is.mp4");
+    // video.play();
+    // console.log("x")
+  // },3000)
+
+
 }

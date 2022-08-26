@@ -10,6 +10,7 @@
   width: 100%;
   height: 100vh;
   position: fixed;
+
 }
 header {
   text-align: center;
@@ -37,6 +38,19 @@ section {
     rgba(148, 187, 233, 1) 100%
   );
   border-radius:  105px 40px;
+  animation: slidein 4s 1;
+  
+}
+@keyframes slidein {
+  0% {
+    margin-top: 0%;
+  }
+  50% {
+    margin-top: 300px;
+  }
+  100% {
+    margin-top: 0%;
+  }
 }
 form {
   margin-top: 2px;
@@ -78,4 +92,7 @@ h4 {
   padding-bottom: 20px;
   padding-top: 20px;
   display: flex;
+}
+video{
+  display: none;
 }
