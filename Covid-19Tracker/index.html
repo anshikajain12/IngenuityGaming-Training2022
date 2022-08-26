@@ -6,17 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Covid-19 Tracker</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@200&family=Oswald&family=Source+Serif+Pro:ital,wght@1,300&family=Titillium+Web:ital,wght@0,300;1,200&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <header>Fetching Data using Covid API</header>
       <section>
         <h3>Today's covid cases</h3>
-        <h4><span id="m">Country Name: </span><form action="">
-          <select name="" id="select">
-            <option value="Country Name" id="cn">Country Name</option>
-          </select>
-        </form></h4>
+        <h4>
+          <span id="m">Country Name: </span>
+          <form action="">
+            <select name="" id="select">
+              <option value="Country Name" id="cn">Country Name</option>
+            </select>
+          </form>
+        </h4>
         <h4><span id="m">Date: </span><span id="y2"></span></h4>
         <h4><span id="m">Total Cases: </span><span id="y3"></span></h4>
         <h4><span id="m">Total Deaths: </span><span id="y4"></span></h4>
