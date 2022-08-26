@@ -36,6 +36,10 @@ var nextbutton = document.querySelector(".bt2");
 function start() {
   var audio = new Audio("./audio/JKL83NH-video-game-win.mp3");
   audio.play();
+  document.body.style.background='url("./Assests/bac.jpg")';
+  document.body.style.backgroundRepeat="no-repeat";
+  document.body.style.backgroundSize="cover";
+  document.body.style.backgroundPosition="inherit";
   h1.style.visibility = "hidden";
   mainMole.style.visibility = "hidden";
   mainMud.style.visibility = "hidden";
