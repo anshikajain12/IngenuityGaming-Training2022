@@ -1,6 +1,8 @@
 //global scope
 var bg, bgImage;
 var mario, mario_running;
+var ground;
+
 
 //load assests
 function preload() {
@@ -29,17 +31,37 @@ function setup() {
   bg.addImage(bgImage);
   mario.addAnimation("running",mario_running);
 
-  
+
   //scale objects
   bg.scale = 0.5;
   mario.scale=0.2;
-//   bg.x=bg.x-200;
+
+  //create ground
+  ground= createSprite(200,580,400,10);
 }
 
 //used to redraw the objects on the canvas
 function draw() {
   //background("black");
 
+  // Make background move and repeat
+  bg.velocityX= -5;
+  if(bg.x < 100){
+    bg.x= bg.width/4;
+  }
+
+  //mario flying
+  if(keyDown('space')){
+    mario.velocityY= -10;
+  }
+
+  //add gravity
+  mario.velocityY = mario.velocityY+ 0.5;
+
+
+  //mario stuck on ground
+  mario.collide(ground);
+  ground.visible=false;
   //redraw objects
   drawSprites();
 }
