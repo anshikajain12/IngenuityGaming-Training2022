@@ -1,17 +1,19 @@
-
-//global scope
 var bg, bgImage;
+
 var mario, mario_running;
-var ground;
-var brickImage, brickGroup;
-var coinsImage, coinsGroup;
+var mario_collided;
+
+var brickGroup, brickImage;
+
+var coinImage, coinsGroup;
 var coinScore = 0;
-var coinSound;
-var jumpSound;
-var mushImage, mushGroup;
-var turImage, turGroup;
-var dead, diedImage;
-//load assests
+
+var mushObstacleImage, turtleObstacleImage, obstaclesGroup;
+
+var gameState = "PLAY";
+
+var restartImg;
+
 function preload() {
   bgImage = loadImage("Assests/bgnew.jpg");
   mario_running = loadAnimation(
@@ -20,20 +22,25 @@ function preload() {
     "Assests/mar3.png",
     "Assests/mar4.png",
     "Assests/mar5.png",
-    "Assests/mar6.png"
+    "Assests/mar6.png",
+    "Assests/mar7.png"
   );
+
   brickImage = loadImage("Assests/brick.png");
-  coinsImage = loadAnimation(
+
+  coinImage = loadAnimation(
     "Assests/con1.png",
     "Assests/con2.png",
     "Assests/con3.png",
     "Assests/con4.png",
-    "Assests/con5.png",
-    "Assests/con6.png"
+    "Assests/con5.png"
   );
+
+  // Add Sounds
   coinSound = loadSound("Audio/coinSound.mp3");
   jumpSound = loadSound("Audio/jump.mp3");
-  mushImage = loadAnimation(
+
+  mushObstacleImage = loadAnimation(
     "Assests/mush1.png",
     "Assests/mush2.png",
     "Assests/mush3.png",
@@ -41,193 +48,195 @@ function preload() {
     "Assests/mush5.png",
     "Assests/mush6.png"
   );
-  turImage = loadAnimation(
+  turtleObstacleImage = loadAnimation(
     "Assests/tur1.png",
     "Assests/tur2.png",
     "Assests/tur3.png",
     "Assests/tur4.png",
     "Assests/tur5.png"
   );
-  diedImage = loadImage("Assests/dead.png");
+  mario_collided = loadAnimation("Assests/dead.png");
+
+  dieSound = loadSound("Audio/dieSound.mp3");
+
+  restartImg = loadImage("Assests/restart.png");
 }
 
-//create  basic scaleton with their required credentials
 function setup() {
-  //create canvas
   createCanvas(1000, 650);
-
-  //create objects
-  bg = createSprite(600, 300, 50, 50);
-  mario = createSprite(200, 520, 50, 50);
-  dead= createSprite(600,530,50,50);
-
-  //add pictures on objects
+  bg = createSprite(600, 300);
   bg.addImage(bgImage);
-  mario.addAnimation("running", mario_running);
-  dead.addImage(diedImage);
-
-  //scale objects
   bg.scale = 0.5;
-  mario.scale = 0.2;
-  dead.scale=0.5;
 
-  //create ground
+  mario = createSprite(200, 520, 20, 50);
+  mario.addAnimation("running", mario_running);
+  mario.scale = 0.2;
+
   ground = createSprite(200, 580, 400, 10);
+
   brickGroup = new Group();
+
   coinsGroup = new Group();
-  mushGroup = new Group();
-  turGroup = new Group();
+
+  obstaclesGroup = new Group();
+
+  mario.addAnimation("collided", mario_collided);
+
+  restart = createSprite(500, 300);
+  restart.addImage(restartImg);
+  restart.visible = false;
 }
 
-//used to redraw the objects on the canvas
 function draw() {
-  //background("black");
+  drawSprites();
 
-  // Make background move and repeat
-  bg.velocityX = -5;
-  if (bg.x < 100) {
-    bg.x = bg.width / 4;
-  }
-
-  //mario flying
-  if (keyDown("space")) {
-    mario.velocityY = -10;
-    jumpSound.play();
-  }
-
-  //add gravity
-  mario.velocityY = mario.velocityY + 0.5;
-
-  //mario stuck on ground
-  mario.collide(ground);
-  ground.visible = false;
-  dead.visible= false;
-
-  //call generate bricks
-  generateBricks();
-  for (var i = 0; i < brickGroup.length; i++) {
-    var temp = brickGroup.get(i);
-    if (mario.isTouching(temp)) {
-      mario.collide(temp);
+  if (gameState == "PLAY") {
+    // Make background Move
+    bg.velocityX = -5;
+    if (bg.x < 100) {
+      bg.x = bg.width / 4;
     }
-  }
-  if (mario.x < 200) {
-    mario.x = 200;
-  }
-  if (mario.y < 50) {
-    mario.y = 50;
-  }
 
-  //generate coins
-  generateCoins();
-  for (var i = 0; i < coinsGroup.length; i++) {
-    var temp = coinsGroup.get(i);
-    if (mario.isTouching(temp)) {
-      temp.destroy();
-      coinSound.play();
-      coinScore++;
-      temp = null;
-      console.log(coinScore);
+    // Make Mario Jump-Up
+    if (keyDown("space")) {
+      mario.velocityY = -10;
+
+      // Mario Jump Sound
+      jumpSound.play();
     }
-  }
-  if (mario.x < 200) {
-    mario.x = 200;
-  }
-  if (mario.y < 50) {
-    mario.y = 50;
-  }
 
-  //random
-  let r = Math.floor(Math.random() *2);
-//   console.log(r);
-  if (r == 1) {
-    generateMush();
-  } else if (r == 0) {
-    generateTur();
-  }
-  // generateMush
-  for (var i = 0; i < mushGroup.length; i++) {
-    var temp = mushGroup.get(i);
-    if (mario.isTouching(temp)) {
-    //   mario.stop();
-      mario.visible = false;
-      dead.visible=true;
+    // Make Mario Come-Down
+    mario.velocityY = mario.velocityY + 0.5;
 
+    // Ground for Mario
+    mario.collide(ground);
+    ground.visible = false;
+
+    generateBricks();
+
+    // Stay on Bricks
+    for (var i = 0; i < brickGroup.length; i++) {
+      var temp = brickGroup.get(i);
+      if (temp.isTouching(mario)) {
+        mario.collide(temp);
+      }
     }
-  }
-  if (mario.x < 200) {
-    mario.x = 200;
-  }
-  if (mario.y < 50) {
-    mario.y = 50;
-  }
 
-  //generateTur
+    // Mario Issue
+    if (mario.x < 200) mario.x = 200;
+    if (mario.y < 50) mario.y = 50;
 
-  for (var i = 0; i < coinsGroup.length; i++) {
-    var temp = coinsGroup.get(i);
-    if (mario.isTouching(temp)) {
-        // mario.stop();
-        mario.visible = false;
-        dead.visible=true;
+    generateCoins();
+
+    // Collect Coins
+    for (var i = 0; i < coinsGroup.length; i++) {
+      var temp = coinsGroup.get(i);
+      if (temp.isTouching(mario)) {
+        coinScore++;
+        //Coin Sound
+        coinSound.play();
+
+        temp.destroy();
+        temp = null;
+      }
+    }
+
+    generateObstacles();
+    if (obstaclesGroup.isTouching(mario)) {
+      dieSound.play();
+      gameState = "END";
+    }
+  } 
   
+  else if (gameState === "END") {
+    bg.velocityX = 0;
+    mario.velocityY = 0;
+    mario.velocityX = 0;
+
+    obstaclesGroup.setVelocityXEach(0);
+    coinsGroup.setVelocityXEach(0);
+    brickGroup.setVelocityXEach(0);
+
+    brickGroup.setLifetimeEach(-1);
+    coinsGroup.setLifetimeEach(-1);
+    obstaclesGroup.setLifetimeEach(-1);
+
+    mario.changeAnimation("collided", mario_collided);
+    mario.y = 570;
+    mario.scale = 0.4;
+
+    restart.visible = true;
+    if (mousePressedOver(restart)) {
+      restartGame();
     }
   }
-  if (mario.x < 200) {
-    mario.x = 200;
-  }
-  if (mario.y < 50) {
-    mario.y = 50;
-  }
 
-  //coins collected
+  // Score Card
   textSize(20);
   fill("brown");
-  text("Coin Collected: " + coinScore, 400, 50);
-
-  //redraw objects
-  drawSprites();
+  text("Coins Collected: " + coinScore, 500, 50);
 }
 
 function generateBricks() {
-  if (frameCount % 80 == 0) {
-    var brick = createSprite(1200, 100, 40, 10);
+  if (frameCount % 70 === 0) {
+    var brick = createSprite(1200, 120, 40, 10);
     brick.y = random(50, 450);
     brick.addImage(brickImage);
     brick.scale = 0.5;
     brick.velocityX = -5;
+
     brick.lifetime = 250;
+
     brickGroup.add(brick);
   }
 }
+
 function generateCoins() {
-  if (frameCount % 50 == 0) {
-    var coin = createSprite(1200, 100, 40, 10);
-    coin.y = random(50, 450);
-    coin.addAnimation("rotate", coinsImage);
+  if (frameCount % 80 === 0) {
+    var coin = createSprite(1200, 120, 40, 10);
+    coin.y = Math.round(random(80, 350));
+    coin.addAnimation("coin", coinImage);
     coin.scale = 0.1;
-    coin.velocityX = -5;
-    coin.lifetime = 250;
+    coin.velocityX = -3;
+
+    coin.lifetime = 500;
+
     coinsGroup.add(coin);
   }
 }
-function generateMush() {
-  if (frameCount % 60 == 0) {
-    var mush = createSprite(200, 565, 400, 10);
-    mush.addAnimation("rotate", mushImage);
-    mush.scale = 0.1;
-    mush.velocityX = -5;
-    mush.lifetime = 250;
-    mushGroup.add(mush);
+
+function generateObstacles() {
+  if (frameCount % 100 === 0) {
+    var obstacle = createSprite(1200, 555, 10, 40);
+    obstacle.velocityX = -5;
+    obstacle.scale = 0.1;
+    var rand = Math.round(random(1, 2));
+    switch (rand) {
+      case 1:
+        obstacle.addAnimation("mush", mushObstacleImage);
+        break;
+      case 2:
+        obstacle.addAnimation("turtle", turtleObstacleImage);
+        break;
+      default:
+        break;
+    }
+    obstacle.lifetime = 300;
+    obstaclesGroup.add(obstacle);
   }
 }
-function generateTur() {
-  if (frameCount % 60 == 0) {
-    var tur = createSprite(200, 565, 400, 10);
-    tur.addAnimation("rotate", turImage);
-    tur.scale = 0.1;
-    tur.velocityX = -5;
-    tur.lifetime = 250;
-    turGroup.add(tur);
-  }
+
+function restartGame() {
+  gameState = "PLAY";
+
+  obstaclesGroup.destroyEach();
+  brickGroup.destroyEach();
+  coinsGroup.destroyEach();
+
+  mario.changeAnimation("running", mario_running);
+  mario.scale = 0.2;
+
+  coinScore = 0;
+
+  restart.visible = false;
 }
