@@ -14,10 +14,10 @@ var gameState = "PLAY";
 
 var restartImg;
 
+var pipeImage, pipeGroup;
+
 function preload() {
-  // bgImage = loadImage("Assests/bgnew.jpg");
   bgImage = loadImage("Assests/bg.jpg");
-  // bgImage = loadImage("Assests/bg1.webp");
   mario_running = loadAnimation(
     "Assests/mar1.png",
     "Assests/mar2.png",
@@ -40,7 +40,7 @@ function preload() {
 
   // Add Sounds
   coinSound = loadSound("Audio/coinSound.mp3");
-  jumpSound = loadSound("Audio/jump.mp3");
+  jumpSound = loadSound("Audio/jump.wav");
 
   mushObstacleImage = loadAnimation(
     "Assests/mush1.png",
@@ -57,18 +57,21 @@ function preload() {
     "Assests/tur4.png",
     "Assests/tur5.png"
   );
+
   mario_collided = loadAnimation("Assests/dead.png");
 
   dieSound = loadSound("Audio/dieSound.mp3");
 
   restartImg = loadImage("Assests/restart.png");
+  pipeImage=loadImage("Assests/pipe.png");
 }
 
 function setup() {
   createCanvas(1000, 650);
   bg = createSprite(600, 300);
   bg.addImage(bgImage);
-  bg.scale = 3.0;
+  // bg.scale = 2.9;
+  // bg.scale=1.0
 
   mario = createSprite(200, 520, 20, 50);
   mario.addAnimation("running", mario_running);
@@ -81,6 +84,8 @@ function setup() {
   coinsGroup = new Group();
 
   obstaclesGroup = new Group();
+
+  pipeGroup = new Group();
 
   mario.addAnimation("collided", mario_collided);
 
@@ -143,25 +148,38 @@ function draw() {
       }
     }
 
+    generatePipes();
+
+    // Stay on Bricks
+    for (var i = 0; i < pipeGroup.length; i++) {
+      var temp = pipeGroup.get(i);
+      if (temp.isTouching(mario)) {
+        mario.collide(temp);
+      }
+     
+    }
+   
+
     generateObstacles();
     if (obstaclesGroup.isTouching(mario)) {
       dieSound.play();
       gameState = "END";
     }
-  } 
-  
-  else if (gameState === "END") {
+  } else if (gameState === "END") {
     bg.velocityX = 0;
     mario.velocityY = 0;
     mario.velocityX = 0;
 
+
     obstaclesGroup.setVelocityXEach(0);
     coinsGroup.setVelocityXEach(0);
     brickGroup.setVelocityXEach(0);
+    pipeGroup.setVelocityXEach(0);
 
     brickGroup.setLifetimeEach(-1);
     coinsGroup.setLifetimeEach(-1);
     obstaclesGroup.setLifetimeEach(-1);
+    pipeGroup.setLifetimeEach(-1);
 
     mario.changeAnimation("collided", mario_collided);
     mario.y = 570;
@@ -175,7 +193,7 @@ function draw() {
 
   // Score Card
   textSize(20);
-  fill("brown");
+  fill("red");
   text("Coins Collected: " + coinScore, 500, 50);
 }
 
@@ -204,6 +222,20 @@ function generateCoins() {
     coin.lifetime = 500;
 
     coinsGroup.add(coin);
+  }
+}
+
+
+function generatePipes() {
+  if (frameCount % 150 === 0) {
+    var pipe = createSprite(1200, 530, 40, 10);    
+    pipe.addImage(pipeImage);
+    pipe.scale = 0.5;
+    pipe.velocityX = -5;
+
+    pipe.lifetime = 250;
+
+    pipeGroup.add(pipe);
   }
 }
 
