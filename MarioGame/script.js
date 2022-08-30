@@ -15,7 +15,9 @@ var gameState = "PLAY";
 var restartImg;
 
 function preload() {
-  bgImage = loadImage("Assests/bgnew.jpg");
+  // bgImage = loadImage("Assests/bgnew.jpg");
+  bgImage = loadImage("Assests/bg.jpg");
+  // bgImage = loadImage("Assests/bg1.webp");
   mario_running = loadAnimation(
     "Assests/mar1.png",
     "Assests/mar2.png",
@@ -66,7 +68,7 @@ function setup() {
   createCanvas(1000, 650);
   bg = createSprite(600, 300);
   bg.addImage(bgImage);
-  bg.scale = 0.5;
+  bg.scale = 3.0;
 
   mario = createSprite(200, 520, 20, 50);
   mario.addAnimation("running", mario_running);
