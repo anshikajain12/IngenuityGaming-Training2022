@@ -1,3 +1,8 @@
+export default function(){
+    console.log("This is an Important Information");
+}
+
+
 let msg=  "This is module concepts";
 
 let account=12345678910;
