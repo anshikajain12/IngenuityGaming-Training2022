@@ -10,12 +10,19 @@ document.body.style.justifyContent = "center";
 document.body.style.textAlign = "center";
 document.body.style.textShadow = "-1px 1px 4px #672d2d";
 document.write(`<h2>Perform commulative sum using rest Operator on passing variable length to a function</h2>`);
-function addFunc(x, ...y) {
+function addFunc(...y) {
     let sum = 0;
+    let enterValueOfY = prompt("Enter the number for sum");
+    y.push(parseInt(enterValueOfY));
+    while (enterValueOfY < 100) {
+        enterValueOfY = prompt("Enter the number for sum");
+        y.push(parseInt(enterValueOfY));
+    }
+    console.log(y);
     for (let i = 0; i < y.length; i++) {
         sum = sum + y[i];
     }
-    return x + sum;
+    return sum;
 }
-let func = addFunc(2, 3, 4, 5, 6, 7, 8, 9);
+let func = addFunc(0);
 document.write(`<h3> sum of variables using rest operator ${func} </h3>`);
