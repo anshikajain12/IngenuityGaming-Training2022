@@ -8,6 +8,7 @@ document.body.style.fontSize = "20px";
 document.body.style.marginTop = "124px";
 document.body.style.justifyContent = "center";
 document.body.style.textAlign = "center";
+document.body.style.textShadow = "-1px 1px 4px #672d2d";
 document.write(`<h2>Perform commulative sum using rest Operator on passing variable length to a function</h2>`);
 function addFunc(x, ...y) {
     let sum = 0;
