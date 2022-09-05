@@ -21,7 +21,7 @@ function addFunc(...y:number[]) {
   let enterValue: any = prompt("Enter the number for sum");
   let p:number=parseInt(enterValue);
 
-  for(let i:number=0;i<p;i++){
+  for(let i:number=1;i<=p;i++){
 
     let enterValueOfY:any=prompt(`Enter the values ${p} times`);
     y.push(parseInt(enterValueOfY));
