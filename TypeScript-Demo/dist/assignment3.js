@@ -12,16 +12,14 @@ document.body.style.textShadow = "-1px 1px 4px #672d2d";
 document.write(`<h2>Perform commulative sum using rest Operator on passing variable length to a function</h2>`);
 function addFunc(...y) {
     let sum = 0;
-    let enterValueOfY = prompt("Enter the number for sum");
-    y.push(parseInt(enterValueOfY));
-    while (enterValueOfY < 100) {
-        enterValueOfY = prompt("Enter the number for sum");
+    let enterValue = prompt("Enter the number for sum");
+    let p = parseInt(enterValue);
+    for (let i = 0; i < p; i++) {
+        let enterValueOfY = prompt(`Enter the values ${p} times`);
         y.push(parseInt(enterValueOfY));
-    }
-    console.log(y);
-    for (let i = 0; i < y.length; i++) {
         sum = sum + y[i];
     }
+    console.log(y);
     return sum;
 }
 let func = addFunc(0);

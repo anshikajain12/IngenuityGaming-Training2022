@@ -15,20 +15,21 @@ document.write(
   `<h2>Perform commulative sum using rest Operator on passing variable length to a function</h2>`
 );
 
-function addFunc(...y: number[]) {
+function addFunc(...y:number[]) {
   let sum: number = 0;
 
-  let enterValueOfY: any = prompt("Enter the number for sum");
-  y.push(parseInt(enterValueOfY));
-  while(enterValueOfY<100){
-    enterValueOfY=prompt("Enter the number for sum");
+  let enterValue: any = prompt("Enter the number for sum");
+  let p:number=parseInt(enterValue);
+
+  for(let i:number=0;i<p;i++){
+
+    let enterValueOfY:any=prompt(`Enter the values ${p} times`);
     y.push(parseInt(enterValueOfY));
+    sum=sum+y[i];
   }
+  
   console.log(y);
-    for (let i: number = 0; i < y.length; i++) {
-      sum = sum + y[i];
-    
-  }
+   
   return sum;
 }
 let func: number = addFunc(0);
