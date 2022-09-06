@@ -14,8 +14,9 @@ function addFunc(...y) {
     let sum = 0;
     let enterValue = prompt("Enter the number for sum");
     let p = parseInt(enterValue);
+    let val = p;
     for (let i = 1; i <= p; i++) {
-        let enterValueOfY = prompt(`Enter the values ${p} times`);
+        let enterValueOfY = prompt(`Enter the values ${val--} times`);
         y.push(parseInt(enterValueOfY));
         sum = sum + y[i];
     }
